@@ -1,0 +1,25 @@
+---
+title: "Sluggers"
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+library(Lahman)
+```
+
+```{r}
+Batting |>
+  filter(playerID == "bondsba01") |>
+  group_by(yearID) |>
+  summarise(HR = sum(HR), .groups = "drop") |>
+  ggplot(aes(x = yearID, y = HR)) +
+  geom_col(fill = "navy") +
+  labs(
+    title = "Barry Bonds hit more home runs in his late 30s than ever before",
+    subtitle = "Home runs per season; the 73 in 2001 is still the single-season record",
+    x = "Season",
+    y = "Home runs",
+    caption = "Source: Lahman Batting table"
+  )
+```

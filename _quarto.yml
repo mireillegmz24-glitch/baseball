@@ -8,6 +8,7 @@ website:
       - href: index.qmd
         text: Home
       - home-runs.qmd
+      - sluggers.qmd
 
 format:
   html:
